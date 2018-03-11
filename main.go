@@ -84,6 +84,9 @@ func main() {
 
 			for _, t := range test.Tests {
 				for _, testCase := range t.SubTests {
+					if len(testCase.FailureSummaries) > 0 {
+						testData.Failures++
+					}
 					for _, summary := range testCase.FailureSummaries {
 						testData.TestCases = append(testData.TestCases, TestCase{Time: testCase.Duration, Failure: &summary.Message, ClassName: fmt.Sprintf("%s:%d", strings.TrimPrefix(strings.TrimPrefix(summary.FileName, os.Getenv("BITRISE_SOURCE_DIR")), "/"), summary.LineNumber), Name: testCase.TestID})
 					}
