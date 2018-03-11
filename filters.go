@@ -42,9 +42,12 @@ func filterXcodeTestResults(files *[]string) ([]string, error) {
 
 func getFilesByExt(ext string, files *[]string) func(osFilePath string, info os.FileInfo, err error) error {
 	return func(osPathname string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
 		if filepath.Ext(info.Name()) == "."+ext {
 			*files = append(*files, osPathname)
 		}
-		return err
+		return nil
 	}
 }

@@ -123,5 +123,6 @@ workflows:
         inputs:
         - scheme: Multi Test Results Sample
         - project_path: $BITRISE_SOURCE_DIR/Multi Test Results Sample.xcodeproj
+        - output_tool: xcodebuild
         - simulator_device: iPhone 7
     - path::./: {}
