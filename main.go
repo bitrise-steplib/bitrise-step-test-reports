@@ -115,11 +115,13 @@ func main() {
 	}
 
 	client := &http.Client{}
-	request, err := http.NewRequest("POST", "https://frozen-brushlands-50401.herokuapp.com/results", bytes.NewReader(b))
+	request, err := http.NewRequest("POST", os.Getenv("ADDON_TESTRESULTS_API_URL")+"/results", bytes.NewReader(b))
 	if err != nil {
 		failf("%s", err)
 	}
 	request.Header.Add("content-type", "application/json")
+
+	request.Header.Add("Authentication", "token "+os.Getenv("ADDON_TESTRESULTS_API_TOKEN"))
 
 	response, err := client.Do(request)
 	if err != nil {
