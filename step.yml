@@ -1,0 +1,68 @@
+title: |-
+  Test Reports
+summary: |
+  Reports test
+description: |
+  Reports test
+website: https://github.com/bitrise-steplib/bitrise-step-test-reports
+source_code_url: https://github.com/bitrise-steplib/bitrise-step-test-reports
+support_url: https://github.com/bitrise-steplib/bitrise-step-test-reports/issues
+host_os_tags:
+  - osx-10.10
+  - ubuntu-16.04
+
+project_type_tags:
+  - android
+  - react-native
+
+type_tags:
+  - test
+
+is_requires_admin_user: true
+is_always_run: true
+is_skippable: false
+
+toolkit:
+  go:
+    package_name: github.com/bitrise-steplib/bitrise-step-test-reports
+
+# inputs:
+  # - project_location: $BITRISE_SOURCE_DIR
+  #   opts:
+  #     title: Project Location
+  #     summary: A project in Android Studio contains everything that defines your workspace for an app (gradlew, settings.gradle), from source code and assets, to test code and build configurations.
+  #     description: A project in Android Studio contains everything that defines your workspace for an app (gradlew, settings.gradle), from source code and assets, to test code and build configurations.
+  #     is_required: true
+  # - variant: ""
+  #   opts:
+  #     title: Variant
+  #     summary: |
+  #       Set the variant that you want to lint. To see your available variants please open your project in Android Studio and go in [Project Structure] -> variants section.
+  #     description: |
+  #       Set the variant that you want to lint. To see your available variants please open your project in Android Studio and go in [Project Structure] -> variants section.
+  #     is_required: false
+  # # - build_type: ""
+  # #   opts:
+  # #     title: Build Type
+  # #     summary: |
+  # #       Set the build type(by default: release/debug) that you want to lint. To see your available build types please open your project in Android Studio and go in [Project Structure] -> Build Types section.
+  # #     description: |
+  # #       Set the build type(by default: release/debug) that you want to lint. To see your available build types please open your project in Android Studio and go in [Project Structure] -> Build Types section.
+  # #     is_required: false
+  # # - module: ""
+  # #   opts:
+  # #     title: Module
+  # #     summary: |
+  # #       Set the module(by default: app) that you want to lint. To see your available modules please open your project in Android Studio and go in [Project Structure] then see the list on the left.
+  # #     description: |
+  # #       Set the module(by default: app) that you want to lint. To see your available modules please open your project in Android Studio and go in [Project Structure] then see the list on the left.
+  # #     is_required: false
+  # - report_include_pattern: "*/build/reports/lint-results.*"
+  #   opts:
+  #     category: Report Export Options
+  #     title: Include pattern
+  #     summary: |
+  #       Will find the report file with the given pattern. If you need the html file only then you can use: "*/build/reports/lint-results.html"
+  #     description: |
+  #       Will find the report file with the given pattern. If you need the html file only then you can use: "*/build/reports/lint-results.html"
+  #     is_required: true
